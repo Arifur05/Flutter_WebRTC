@@ -26,15 +26,18 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           const SizedBox(height: 8),
-          Flexible(
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    //signaling.openUserMedia(_localRenderer, _remoteRenderer);
-                  },
-                  child: const Text("Open camera & microphone"),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      //signaling.openUserMedia(_localRenderer, _remoteRenderer);
+                    },
+                    child: const Text("Open camera & microphone", textAlign: TextAlign.center,)
+                  ),
                 ),
                 const SizedBox(
                   width: 8,
