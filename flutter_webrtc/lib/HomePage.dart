@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:flutter_webrtc_project/signalimg.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,11 +12,31 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  //Signaling signaling = Signaling();
+  Signaling signaling = Signaling();
   final RTCVideoRenderer _localRenderer = RTCVideoRenderer();
   final RTCVideoRenderer _remoteRenderer = RTCVideoRenderer();
   String? roomId;
   TextEditingController textEditingController = TextEditingController(text: '');
+
+  @override
+  void initState() {
+    _localRenderer.initialize();
+    _remoteRenderer.initialize();
+
+    signaling.onAddRemoteStream = ((stream) {
+      _remoteRenderer.srcObject = stream;
+      setState(() {});
+    });
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _localRenderer.dispose();
+    _remoteRenderer.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      //signaling.openUserMedia(_localRenderer, _remoteRenderer);
+                      signaling.openUserMedia(_localRenderer, _remoteRenderer);
                     },
                     child: const Text("Open camera & microphone", textAlign: TextAlign.center,)
                   ),
@@ -44,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    //roomId = await signaling.createRoom(_remoteRenderer);
+                    roomId = await signaling.createRoom(_remoteRenderer);
                     textEditingController.text = roomId!;
                     setState(() {});
                   },
@@ -56,10 +77,10 @@ class _HomePageState extends State<HomePage> {
                 ElevatedButton(
                   onPressed: () {
                     // Add roomId
-                    // signaling.joinRoom(
-                    //   textEditingController.text,
-                    //   _remoteRenderer,
-                    // );
+                    signaling.joinRoom(
+                      textEditingController.text,
+                      _remoteRenderer,
+                    );
                   },
                   child: const Text("Join room"),
                 ),
@@ -68,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // signaling.hangUp(_localRenderer);
+                    signaling.hangUp(_localRenderer);
                   },
                   child: const Text("Hangup"),
                 )
