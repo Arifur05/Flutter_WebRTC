@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "840930738701",
+    "project_id": "flutter-webrtc-606ca",
+    "storage_bucket": "flutter-webrtc-606ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840930738701:android:195d5f42ee358ef71a4b44",
+        "android_client_info": {
+          "package_name": "com.arifur.flutter_webrtc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840930738701-baq149tc79uordkhrgtrcu4smrnqf60u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRjSCJnixqKkP-57d5ayXfhBUF8O15INs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840930738701-baq149tc79uordkhrgtrcu4smrnqf60u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
