@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "847739011325",
-    "project_id": "webrtc-application-913bf",
-    "storage_bucket": "webrtc-application-913bf.appspot.com"
+    "project_number": "840930738701",
+    "project_id": "flutter-webrtc-606ca",
+    "storage_bucket": "flutter-webrtc-606ca.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:847739011325:android:125d7af35c2a7d9162be94",
+        "mobilesdk_app_id": "1:840930738701:android:195d5f42ee358ef71a4b44",
         "android_client_info": {
           "package_name": "com.arifur.flutter_webrtc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "847739011325-6spcvrm2rd461risd19ck2hm1quc7alk.apps.googleusercontent.com",
+          "client_id": "840930738701-baq149tc79uordkhrgtrcu4smrnqf60u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD3e7YNt3rhEPqYSy12xug6_XySxiy3smE"
+          "current_key": "AIzaSyBRjSCJnixqKkP-57d5ayXfhBUF8O15INs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "847739011325-6spcvrm2rd461risd19ck2hm1quc7alk.apps.googleusercontent.com",
+              "client_id": "840930738701-baq149tc79uordkhrgtrcu4smrnqf60u.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

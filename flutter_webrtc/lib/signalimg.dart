@@ -28,7 +28,9 @@ class Signaling {
     FirebaseFirestore db = FirebaseFirestore.instance;
     DocumentReference roomRef = db.collection('rooms').doc();
 
-    print('Create PeerConnection with configuration: $configuration');
+      print('Create PeerConnection with configuration: $configuration');
+      print('Create PeerConnection with configuration: ${roomRef.path}');
+
 
     peerConnection = await createPeerConnection(configuration);
 
@@ -56,10 +58,11 @@ class Signaling {
 
     await roomRef.set(roomWithOffer);
     var roomId = roomRef.id;
+
     print('New room created with SDK offer. Room ID: $roomId');
     currentRoomText = 'Current room is $roomId - You are the caller!';
     // Created a Room
-
+    print('Room ID: $currentRoomText');
     peerConnection?.onTrack = (RTCTrackEvent event) {
       print('Got remote track: ${event.streams[0]}');
 
